@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         //Creamos el intento para abrir la secondaryactivity
         Intent i = new Intent(this, Secondary_activity.class);
 
-        String nombre = "Pepe";
+        EditText et = findViewById(R.id.idEdit);
+        String texto = et.getText().toString();
 
         //antes de arrancar le paso datos. Añadirle al intent tantos datos como queramos.
-        i.putExtra("extranombre", nombre);
+        i.putExtra("extranombre", texto);
         //arrancamos la activity.
         startActivity(i);
 
